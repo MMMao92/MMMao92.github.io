@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>茅伟锋ECMAscript基础知识复习20161207.html</title>
+	</head>
+
+	<body>
+		<h1>1207</h1>
+		<h3>html编码规范</h3>
+		<p>1、不管有多少人共同参与同一项目，一定要确保每一行代码都像是同一个人编写的。</p>
+		<p>2、駝峰命名</p>
+		<p>3、有些單詞不能用</p>
+		<h3>for循环</h3>
+		<p>for循环的格式</p>
+		<pre>for(申明变量;表达式或值;表达式或值(后运行)){
+			满足条件执行;
+		}</pre>
+		<h4>for循环实例</h4>
+		<pre>
+        	#box {
+				width: 260px;
+			}
+			
+			#box div {
+				width: 50px;
+				height: 50px;
+				border: 1px solid black;
+				float: left;
+				text-align: center;
+				line-height: 50px;
+			}
+
+        </pre>
+		<pre>			
+	     	window.onload = function() {
+				var box = document.getElementById("box");
+				var l = 5;
+				var str = "";
+				for(i = 0; i < 5; i++) {
+					for(j = 0; j < 5; j++) {
+						if(5 * i + j - 3 < 0){
+							str += "<div></div>"
+					} else {
+						str += "<div>" + (5 * i + j - 3) + "</div>"
+					}}
+				}
+				box.innerHTML = str;
+			}
+		</pre>
+		<p>圖片</p>
+		<a href="https://github.com/MMMao92/MMMao92.github.io/blob/master/img/QQ%E6%88%AA%E5%9B%BE20161207195601.png">圖片</a>
+		<h3>函數的申明</h3>
+		<p>直接申明</p>
+		<pre>
+    function aa(){
+        	
+    }
+        </pre>
+		<p>表達式申明</p>
+		<pre>
+    var aa=function(){
+        	
+    }
+        </pre>
+		<p>匿名函數</p>
+		<pre>
+    function(){
+        	
+    }
+        </pre>
+		<h3>函數的調用</h3>
+		<p>申明函數并調用</p>
+		<pre>
+    function func() {
+    alert(111);
+    }
+    func();
+       </pre>
+		<pre>
+    var foo = function() {
+    alert("111");
+    };
+    foo();
+        </pre>
+		<p>匿名調用</p>
+		<pre>
+    (function(){
+    	alert(1111)
+    })();
+        </pre>
+
+	</body>
+
+</html>
