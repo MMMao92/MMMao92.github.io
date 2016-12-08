@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>茅伟锋_JavaScript内置对象总结20161208  </title>
+	</head>
+	<body>
+		<h1>总结</h1>
+		<h3>1、array对象</h3>
+		<p>(1)pop删除并返回数组的最后一个元素</p>
+		<pre>
+			var arr=[1,2,3]
+			console.log(arr.pop(1))；
+			返回3
+		</pre>
+		<p>(2)push向数组的末尾添加一个或多个元素，并返回新的长度</p>
+		<pre>
+			var  arr=[];
+			arr.push("3");
+			console.log(arr);
+			返回3;
+			
+		</pre>
+		<p>(3)shift把数组的第一个元素从其中删除，并返回第一个元素的值</p>
+		<pre>
+		    var  arr=[1,2];
+			arr.shift("0");
+			console.log(arr);
+			返回2;
+			</pre>
+			<p>(4)unshift向数组的开头添加一个或更多元素，并返回新的长度</p>
+			<pre>
+		    var  arr=[1,2];
+			arr.unshift("0");
+			console.log(arr);
+			返回0,1,2;
+			</pre>
+			<h3>2、string对象</h3>
+			<p>(1)charAt返回指定位置的字符</p>
+			<pre>
+				var  arr="123"
+				console.log(arr.charAt(1));
+				返回2;
+			</pre>
+			<p>(2)indexOf返回某个指定的字符串值在字符串中首次出现的位置</p>
+			<pre>
+				var  arr="123 234 444"
+				console.log(arr.indexOf('234'));
+				返回4;
+			</pre>
+			<p>(3)lastIndexOf返回一个指定的字符串值最后出现的位置，在一个字符串中的指定位置从后向前搜索</p>
+			<pre>
+				var  arr="123456 234"
+				console.log(arr.lastIndexOf('234'));
+				返回7;
+			</pre>
+			<p>(4)match在字符串内检索指定的值</p>
+			<pre>
+				var  arr="123456 234"
+				console.log(arr.match('234'));
+				返回234;
+			</pre>
+		    <p>(5)slice在字符串内截取并输出后面的</p>
+			<pre>
+				var  arr="123456 234"
+				console.log(arr.slice('4'));
+				返回56 234；
+			</pre>
+			<p>(6)split一个字符串分割成字符串数组</p>
+			<pre>
+				var  arr="123456 234"
+				console.log(arr.split('4'));
+				返回123,56 23;
+			</pre>
+			<p>(7)subsrt字符串中抽取从前面那个数字下标开始的指定数目的字符，后面显示长度</p>
+			<pre>
+				var  arr="123456 234"
+				console.log(arr.substr(2,3));
+				返回345;
+			</pre>
+			<p>(8)substring提取字符串中介于两个指定下标之间的字符</p>
+			<pre>
+				var  arr="123456 234"
+				console.log(arr.substr(2,5));
+				返回3456;
+			</pre>
+		    <h3>课堂作业点名表</h3>
+		    <pre>
+		    	<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			table {
+				border: 1px solid black;
+			}
+			
+			td {
+				width: 100px;
+				text-align: center;
+				background :  white;
+				height: 35px;
+				line-height: 35px;
+				border: 1px solid black;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="div"></div>
+		<script type="text/javascript">
+			var classList = [{
+				name: "姓名",
+				age: "年龄",
+				sex: "性别",
+				score: "分数"
+			}, {
+				name: "高健",
+				age: 18,
+				sex: "男",
+				score: 0
+			}, {
+				name: "金正勇",
+				age: 18,
+				sex: "男",
+				score: 0
+			}, {
+				name: "陈麟鑫",
+				age: 18,
+				sex: "男",
+				score: 0
+			}, {
+				name: "吾隽杰",
+				age: 18,
+				sex: "男",
+				score: 0
+			}, {
+				name: "何松霖",
+				age: 18,
+				sex: "男",
+				score: 0
+			}, {
+				name: "张荣荣",
+				age: 18,
+				sex: "男",
+				score: 0
+			}, {
+				name: "方本领",
+				age: 18,
+				sex: "男",
+				score: 0
+			}, {
+				name: "贾轩",
+				age: 18,
+				sex: "男",
+				score: 0
+			}, {
+				name: "宓凯华",
+				age: 18,
+				sex: "男",
+				score: 0
+			}, {
+				name: "殷永贵",
+				age: 18,
+				sex: "男",
+				score: 0
+			}, {
+				name: "唐凯强",
+				age: 18,
+				sex: "男",
+				score: 0
+			}, {
+				name: "赵天成",
+				age: 18,
+				sex: "男",
+				score: 0
+			}, {
+				name: "苏雁雁",
+				age: 18,
+				sex: "女",
+				score: 0
+			}, {
+				name: "俞一帆",
+				age: 18,
+				sex: "男",
+				score: 0
+			}, {
+				name: "茅伟锋",
+				age: 18,
+				sex: "男",
+				score: 0
+			}, {
+				name: "沈雨潮",
+				age: 18,
+				sex: "男",
+				score: 0
+			}, {
+				name: "冯博扬",
+				age: 18,
+				sex: "男",
+				score: 0
+			}, {
+				name: "黄晨辉",
+				age: 18,
+				sex: "男",
+				score: 0
+			}];
+			var div = document.getElementById("div");
+
+			var str = "<table>";
+			for(var i = 0; i < classList.length; i++) {
+				str += "<tr>"
+				for(var j in classList[i]) {
+					str += "<td>" + classList[i][j] + "</td>";
+				}
+				str += "</tr>";
+			}
+			div.innerHTML = str;
+		</script>
+	</body>
+	<html>
+		    </pre>
+			
+	</body>
+</html>
