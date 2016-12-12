@@ -1,0 +1,69 @@
+<html>
+
+	<head>
+		<title>2016年12月12日JavaScript总结</title>
+	</head>
+
+	<body>
+		<h1>1212总结</h1>
+		<h3>时间</h3>
+		<pre>
+		<html>
+	    <head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>无标题</title>
+		<script type="text/javascript">
+			window.onload = function() {
+				function aa() {
+					var  time = document.getElementById('time');
+					var  time1 = new Date();
+					var  img = document.getElementsByTagName('img');
+					var  pic = ["./img/0.png","./img/1.png","./img/2.png","./img/3.png","./img/4.png","./img/5.png","./img/6.png",
+					"./img/7.png","./img/8.png","./img/9.png","./img/dot.png",]
+					var  year = time1.getFullYear();
+					var date = time1.getDate();
+					
+					var  hour = time1.getHours();
+					var  min = time1.getMinutes();
+					var  mon = time1.getMonth() + 1;
+					var  sed = time1.getSeconds();
+					var   a =parseInt(hour/10);
+					var  b = hour%10;
+					var  c = parseInt(min/10);
+					var  d =min%10;
+					var  e = parseInt(sed/10)
+					var  f =sed%10;
+				     img[0].src=pic[a];
+				     img[1].src=pic[b];
+				     img[2].src=pic[10];
+				     img[3].src=pic[c];
+				     img[4].src=pic[d];
+				     img[5].src=pic[10];
+				     img[6].src=pic[e];
+				     img[7].src=pic[f];
+			setTimeout(aa, 500)
+				}
+				aa()
+                }
+		</script>
+	</head>
+
+	<body>
+		<div id="time">
+			<img src="" alt="" />
+			<img src="" alt="" />
+			<img src="" alt="" />
+			<img src="" alt="" />
+			<img src="" alt="" />
+			<img src="" alt="" />
+			<img src="" alt="" />
+			<img src="" alt="" />
+		</div>
+	</body>
+
+</html>
+		</pre>
+		<h3>然后早上请假了 漏下的知识晚上回去看录屏</h3>
+	</body>
+
+</html>
