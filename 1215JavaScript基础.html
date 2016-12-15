@@ -1,30 +1,21 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<title>1215JavaScript基础总结</title>
-	</head>
-	<body>
-		<h1>1215JavaScript基础总结</h1>
-		<p>canvas画图</p>
-		<pre>
-			<!DOCTYPE html>
-<html>
 
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
 		<style type="text/css">
-			div {
+			.box{
 				width: 1200px;
 				height: 1200px;
 				margin: auto;
 			}
+			
 		</style>
 	</head>
 
 	<body>
-		<div>
+		<div class="box">
 			<canvas id="canvas" width="1000" height="1000"></canvas>
 		</div>
 		<script type="text/javascript">
@@ -109,7 +100,7 @@
 			
 			
 			cxt.restore();
-				cxt.save();
+			cxt.save();
 			cxt.beginPath();
 			cxt.fillStyle="white";
 			cxt.translate(-250, -10);
@@ -131,8 +122,49 @@
 			cxt.save();
 			
 			
+			cxt.restore();
+			cxt.beginPath();
 			
+			cxt.fillStyle="black";
+			cxt.translate(90,112);
+			cxt.arc(120,75,10,0,2*Math.PI);
+			cxt.stroke();
+			cxt.fill();
+			cxt.closePath();
+			cxt.save();
+
+
+
+			cxt.restore();
+			cxt.beginPath();
+			cxt.strokeStyle="black"
+			cxt.lineWidth = "3";
+			cxt.translate(-160, -25);
+			cxt.moveTo(290, 160);
+			cxt.quadraticCurveTo(290,70, 260, 148);
+			cxt.stroke();
+			cxt.closePath();
+			cxt.save();
+
 			
+			cxt.restore();	
+			
+			cxt.beginPath();
+			cxt.fillStyle="white";
+			cxt.translate(290, -80);
+			cxt.arc(120,75,10,0,2*Math.PI);
+			cxt.stroke();
+			cxt.fill();
+			cxt.closePath();
+			cxt.save();
+
+
+
+
+
+
+
+
 			
 			
 			
@@ -140,11 +172,7 @@
 			
 			
 		</script>
+		<div class="zi">我很丑。。可是我很温柔</div>
 	</body>
 
-</html>
-		</pre>
-		<p>遇到的问题</p>
-		<p>画完一个圈。画另外一个的时候 好像要冲突 把之前的挤开了。还不知道怎么解决</p>
-	</body>
 </html>
