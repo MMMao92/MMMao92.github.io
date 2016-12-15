@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>1215JavaScript基础总结</title>
+	</head>
+	<body>
+		<h1>1215JavaScript基础总结</h1>
+		<p>canvas画图</p>
+		<pre>
+			<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div {
+				width: 1200px;
+				height: 1200px;
+				margin: auto;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div>
+			<canvas id="canvas" width="1000" height="1000"></canvas>
+		</div>
+		<script type="text/javascript">
+			var canvas = document.getElementById("canvas");
+			var cxt = canvas.getContext("2d");
+			cxt.strokeStyle = 'black';
+			cxt.lineWidth = "5";
+
+			cxt.restore();
+			cxt.beginPath();
+			cxt.moveTo(100, 500);
+			cxt.bezierCurveTo(100, 700, 800, 700, 820, 500);
+			cxt.moveTo(100, 500);
+			cxt.bezierCurveTo(100, -100, 800, -100, 820, 500);
+			cxt.stroke();
+			cxt.save();
+
+			cxt.restore();
+			cxt.beginPath();
+			cxt.moveTo(220, 150);
+			cxt.quadraticCurveTo(200, -20, 380, 58);
+			cxt.stroke();
+			cxt.closePath();
+			cxt.save();
+
+			cxt.restore();
+			cxt.beginPath();
+			cxt.translate(125, 2);
+			cxt.moveTo(480, 90);
+			cxt.quadraticCurveTo(650, -90, 640, 258);
+			cxt.stroke();
+			cxt.closePath();
+			cxt.save();
+			
+			
+			cxt.restore();
+			cxt.beginPath();
+			cxt.strokeStyle="gray";
+			cxt.lineWidth = "3";
+			cxt.translate(-63, 2);
+			cxt.moveTo(220,100);
+			cxt.lineTo(260,100);
+			cxt.stroke();
+			cxt.closePath();
+			cxt.save();
+			
+			cxt.restore();
+			cxt.beginPath();
+			cxt.strokeStyle="gray"
+			cxt.lineWidth = "3";
+			cxt.translate(320, -20);
+			cxt.moveTo(160, 140);
+			cxt.quadraticCurveTo(190,70, 230, 148);
+			cxt.stroke();
+			cxt.closePath();
+			cxt.save();
+			
+			
+		cxt.restore();
+			cxt.beginPath();
+			cxt.strokeStyle="black"
+			cxt.lineWidth = "5";
+			cxt.fillStyle="black";
+			cxt.translate(-200, 200);
+			cxt.arc(120,75,60,0,2*Math.PI);
+			cxt.stroke();
+			cxt.fill();
+			cxt.closePath();
+			cxt.save();
+			
+			cxt.restore();
+			cxt.beginPath();
+			cxt.strokeStyle="black"
+			cxt.lineWidth = "5";
+			cxt.fillStyle="black";
+			cxt.translate(290, 00);
+			cxt.arc(120,75,60,0,2*Math.PI);
+			cxt.stroke();
+			cxt.fill();
+			cxt.closePath();
+			cxt.save();
+			
+			
+			cxt.restore();
+				cxt.save();
+			cxt.beginPath();
+			cxt.fillStyle="white";
+			cxt.translate(-250, -10);
+			cxt.arc(120,75,10,0,2*Math.PI);
+			cxt.stroke();
+			cxt.fill();
+			cxt.closePath();
+		
+			
+			cxt.restore();	
+			
+			cxt.beginPath();
+			cxt.fillStyle="white";
+			cxt.translate(-250, -10);
+			cxt.arc(120,75,10,0,2*Math.PI);
+			cxt.stroke();
+			cxt.fill();
+			cxt.closePath();
+			cxt.save();
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</script>
+	</body>
+
+</html>
+		</pre>
+		<p>遇到的问题</p>
+		<p>画完一个圈。画另外一个的时候 好像要冲突 把之前的挤开了。还不知道怎么解决</p>
+	</body>
+</html>
