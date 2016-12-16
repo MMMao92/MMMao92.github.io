@@ -17,7 +17,74 @@
 </p>
 <p>可以通过这些代码来画出各种形状的图案</p>
 <h1>图像的旋转</h1>
-<pre></pre>
-<p>东西在教室电脑上。。明天早上上传</p>
+<pre>
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+
+	<body>
+		<canvas id="canvas" width="1177" height="746"></canvas>
+		<button id="left">左</button>
+		<button id="right">右</button>
+		<script type="text/javascript">
+			var canvas = document.getElementById("canvas");
+			var cxt = canvas.getContext("2d");
+			var left = document.getElementById("left");
+			var right = document.getElementById("right");
+			var img = new Image()
+			img.src = "1.png"
+			img.onload = function() {
+				cxt.drawImage(img, 0, 0);
+			}
+
+			function moveright() {
+				var x = canvas.width / 2;      
+				var y = canvas.height / 2;    
+				cxt.clearRect(0, 0, canvas.width, canvas.height); //先清掉画布上的内容
+				cxt.translate(x, y); //将绘图原点移到画布中点
+				cxt.rotate((Math.PI / 180) * 90); //旋转角度
+				cxt.translate(-x, -y); //将画布原点移动
+				cxt.drawImage(img, 0, 0); //绘制图片  
+			}
+			right.onclick = function() {
+				moveright()
+			}
+
+			function moveleft() {
+				var  x = canvas.width / 2; 
+				var  y = canvas.height / 2; 
+				cxt.clearRect(0, 0, canvas.width, canvas.height); //先清掉画布上的内容
+				cxt.translate(x, y); //将绘图原点移到画布中点
+				cxt.rotate((Math.PI / 180) * -90); //旋转角度
+				cxt.translate(-x, -y); //将画布原点移动
+				cxt.drawImage(img, 0, 0); //绘制图片  
+			}
+			left.onclick = function() {
+				moveleft()
+			}
+			
+//			function translate(){
+//				var  x = canvas.width / 2; 
+//				var  y = canvas.height / 2; 
+//				cxt.clearRect(0, 0, canvas.width, canvas.height); //先清掉画布上的内容
+//				cxt.translate(x, y); //将绘图原点移到画布中点
+//				cxt.rotate((Math.PI / 180) * 90); //旋转角度
+//				cxt.translate(-x, -y); //将画布原点移动
+//				cxt.drawImage(img, 0, 0); //绘制图片  
+//				
+//			}translate()
+//			self.setInterval(translate,800);
+//			
+		</script>
+
+	</body>
+
+</html>
+</pre>
+
 </body>
 </html>
