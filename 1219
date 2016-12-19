@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>茅伟锋_JavaScript内置对象总结20161219  </title>
+	</head>
+	<body>
+		<h1>总结</h1>
+		<p>this值</p>
+		<pre>
+	<p>this 指向windows</p> 
+		var say = "hello world";
+		var obj = {};
+		obj.say = "hello, object";
+		obj.foo = function(){
+			return function(){
+				return this.say;
+			}
+		}
+		alert(obj.foo()());
+		<p>this指向object</p> 
+		var say = "hello world!";
+		var obj  = {};
+		obj.say = "hello object";
+		obj.foo = function(){
+			var that  = this;
+			return function（）{
+				return that.say;
+			}
+		}
+		alert(obj.foo();)
+		</pre>
+    <h2>一脸懵逼，听不懂</h2>
+    
+		<p>视频</p>
+		<pre>
+			<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+		.box{
+			width: 1200px;
+			height: 1200px;
+			position: relative;
+		}
+			#now {
+				width: 800px;
+				height: 20px;
+				background: red;
+				margin-top: -27.5px;;
+			
+			}
+			
+			#all {
+				width: 800px;
+				height: 25px;
+				background: yellow;
+				position: absolute;
+				left: 105px;
+				top: 445px;
+				display: none;
+			}
+			
+			#btt {
+				width: 10px;
+				height: 10px;
+				border-radius: 10px;
+				background: blue;
+				position: absolute;
+				z-index: 8;
+				left: 6px;
+				top: 6px;
+			}
+			
+			#buff {
+				width: 800px;
+				height: 20px;
+				background: blueviolet;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="box">
+		<video width="800" height="" loop="loop" id="video">
+			<source src="img/婚礼现场.webm" type="video/webm"></source>
+		</video>
+		<button id="btn">播放</button>
+
+		<div id="all">
+			<div id="now">
+				<div id="btt"></div>
+			</div>
+		</div>
+		<!--<div id="buff"></div>-->
+		</div>
+	</body>
+	<script type="text/javascript">
+		var video = document.getElementById("video");
+		var btn = document.getElementById("btn");
+		var now = document.getElementById("now");
+		now.style.width = 1 + "px";
+		var all = document.getElementById("all");
+		var btt = document.getElementById("btt");
+		var buff = document.getElementById("buff");
+		now.style.width = 1 + "px";
+
+		btn.addEventListener("click", aa);
+
+		video.onmouseenter = function() {
+			all.style.display = "block";
+		}
+		video.onmouseleave = function() {
+			all.style.display = "none";
+		}
+		var st;
+
+		function aa() {
+
+			if(btn.innerText == "播放") {
+				video.play();
+				btn.innerText = "暂停";
+			} else {
+				video.pause();
+				btn.innerText = "播放";
+			}
+		}
+		st = setInterval(function() {
+
+			now.style.width = video.currentTime / video.duration * 800 + "px";
+			btt.style.left = video.currentTime / video.duration * 800 - 5 + "px";
+
+		}, 2)
+	</script>
+
+</html>
+		</pre>
+	</body>
+</html>
