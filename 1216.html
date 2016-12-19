@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>1216JavaScript基础总结</title>
+	</head>
+	<body>
+		<h1>1216JavaScript基础总结</h1>
+		<p>考试总结</p>
+		<p>第二题写setInterval的时候还是不够熟练</p>
+		<pre>
+		var st = document.getElementById("showtime");
+		var i=10;
+		function time() {
+			if(i>0) {
+					i--;
+				st.innerHTML=i;
+			} 
+		}
+		setInterval(time, 1000);
+		</pre>
+		<p>第三题</p>
+		<p>alert()属于window对象</p>
+		<p>其他get到的点</p>
+		<p>
+			<pre>
+				var a=1;
+				function test(){
+					a++;
+					alert(a);
+				}
+			
+			</pre>
+			这个弹出的a为NaN,定义在外面，所以应该是undefined，然后经过a++强转为数值。
+		</p>
+	</body>
+</html>
