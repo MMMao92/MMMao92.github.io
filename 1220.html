@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>茅伟锋_JavaScript内置对象总结20161220</title>
+	</head>
+	<body>
+		<h1>1220</h1>
+		<p>视频音频</p>
+		<p>视频标签</p>
+		<p>play()开始播放音频/视频</p>
+		<p>pause()暂停当前播放音频/视频</p>
+		<p>autoplay加载完页面后自动播放视频</p>
+		<p>controls设置播放视频的控件</p>
+		<p>currentTime返回视频当前的播放位置</p>
+		<p>duration视频的总长度</p>
+		<p>loop循环播放</p>
+		<p>哎呀看具体代码吧</p>
+		
+		<p>这是点击开始暂停的按钮代码</p>
+		<p>
+			function aa() {
+
+			if(btn.innerText == "播放") {
+				video.play();
+				btn.innerText = "暂停";
+			} else {
+				video.pause();
+				btn.innerText = "播放";
+			}
+			st = setInterval(function() {
+
+				now.style.width = video.currentTime / video.duration * 800 + "px";
+				btt.style.left = video.currentTime / video.duration * 800 - 5 + "px";
+
+			}, 2)
+		}
+		</p>
+		
+		
+		
+		
+		<p>这是拖动进度条的代码</p>
+		<p>
+			function move() {
+			var a = false;
+			all.addEventListener("mousedown", function(e) {
+				a = true;
+				clearInterval(st);
+				if(e.clientX < 800) {
+					now.style.width = e.clientX + "px";
+					video.currentTime = e.clientX / 800 * video.duration;
+				}
+			});
+			all.addEventListener("mousemove", function(e) {
+				if(a) {
+					if(e.clientX < 800) {
+						now.style.width = e.clientX + "px";
+						video.currentTime = e.clientX / 800 * video.duration;
+					}
+				}
+			});
+			window.addEventListener("mouseup", function(e) {
+				if(a) {
+					if(e.clientX < 500) {
+						now.style.width = e.clientX + "px";
+					}
+				}
+				a = false;
+			});
+		}
+		move();
+		</p>
+		<p>下午讲的是跑马灯</p>
+		<p>具体代码如下</p>
+		<pre>
+			<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>跑马灯</title>
+		<style type="text/css">
+			#box {
+				width: 100px;
+				height: 50px;
+				overflow: hidden;
+			}
+			
+			#div {
+				width: 200px;
+				height: 50px;
+			}
+			
+			p {
+				width: 100px;
+				height: 50px;
+				float: left;
+				text-align: center;
+				line-height: 50px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="box">
+			<div id="div">
+				<p>啊啊啊啊啊啊啊啊</p>
+				<p>啊啊啊啊啊啊啊啊</p>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var box = document.getElementById("box");
+		setInterval(function() {
+			if(box.scrollLeft == 100) {
+				box.scrollLeft = 0;
+			} else {
+				box.scrollLeft++;
+			}
+		}, 10)
+	</script>
+
+</html>
+		</pre>
+		
+		<p>个人学习总结</p>
+		<p>主要是还是问旁边潮哥多一点，然后自己再想想，再不会就百度下，自己再想想，实在不会。。潮哥：代码看下</p>
+		
+	</body>
+</html>
