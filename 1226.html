@@ -161,5 +161,75 @@
 //	 	})
 	 </script>
 	 </div>
+	 <pre>
+	 <!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>登录</title>
+		<style type="text/css">
+			.box{
+				width: 300px;
+				height: 350px;
+				margin: auto;
+			}
+			.box>div{
+				width: 200px;
+				height: 50px;
+				border: 1px solid #ccc;
+		
+				}	
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div>姓名<input type="text" id="name"/></div>
+			<div>邮箱<input type="text" id="email" /></div>
+			<div>电话<input type="text" id="call"/></div>
+			<div>密码<input type="text" id="psd" /></div>
+			<div>重复密码<input type="text" id="repsd" /></div>
+			
+			
+			
+			<div>地址</div>
+			<select id="st1">
+				<option>选择省</option>
+				<option>浙江</option>
+				<option>江苏</option>
+				
+			</select>
+			<select id="st2">
+				<option>选择市</option>
+				
+			</select>
+			<button id="add">提交</button>
+			
+		</div>
+		<script src="js/jquery-3.1.1.min.js"></script>
+		<script type="text/javascript">
+			$("#add").click(function(){
+				if($("#name").val()==""||$("#email").val()==""||$("#call").val()==""||$("#psd").val()==""||$("#name").val()=="repsd"){
+					alert("填写内容不能为空");
+				};
+				if($("#psd").val()!=$("#repsd").val()){
+					alert("两次输入的密码不一致");
+				}
+			})
+			var arr =[
+			["台州市","杭州市","金华市"],
+			["苏州市","常熟市","昆山市"]
+			]
+			$("#st1").change(function(){
+				 var str="<option>选择市</option>";
+	                 for(var i=0;i<arr[this.selectedIndex-1].length;i++){
+		            str+="<option>"+arr[this.selectedIndex-1][i]+"</option>";
+	                }
+	                 $("#st2").html(str);
+			})
+		</script>
 	</body>
+</html>
+
+	 </pre>	
+</body>
 </html>
