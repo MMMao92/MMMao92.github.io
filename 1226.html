@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>茅伟锋JavaScript1226基础总结</title>
+	</head>
+    <style type="text/css">
+			*{padding: 0;margin: 0;font-family: "微软雅黑";}
+			h1{width: auto;height: 100px;line-height: 100px;text-align: center;color: red;}
+			h3{width: auto;height: 60px;line-height: 60px;color: green;}
+			pre{background:lightblue;border: 1px solid grey;border-radius: 10px;margin-top: 30px;margin-bottom: 30px;padding: 5px;}
+            #box{width: 800px;margin: auto;}
+			li{
+				list-style: none;
+				height: 50px;
+				width: 50px;
+				border: 1px solid #999;
+				text-align: center;
+			}
+			span{
+				border: 1px solid green;
+				cursor: pointer;
+			}
+			.cssClass{background: blue;}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+				<h1>jQuery总结</h1>
+			<h1>jquery常用选择器</h1>
+		<pre>
+			< head>
+		< meta charset="UTF-8">
+		< title>< /title>
+		< style type="text/css">
+			li{
+				list-style: none;
+				height: 50px;
+				width: 50px;
+				border: 1px solid red;
+				text-align: center;
+			}
+			span{
+				border: 1px solid green;
+				cursor: pointer;
+			}
+			.cssClass{background: red;}
+		< /style>
+	< /head>
+	< body>
+		< ul>
+			< li id="li1">id选择器< /li>
+			< li class="li2">class选择器< /li>
+		< /ul>
+		
+		< input type="text" value="ip1" name="ip1"/>
+		< input type="date" value="ip2" name="ip2"/>
+		< input type="text" value="ip3" name="ip3"/>
+		< br />
+		< p>< /p>
+	 < span id="id">id选择器< /span>
+	 < span id="btn">class选择器< /span>
+	 < span id="btn1">标签选择器< /span>
+	 < span id="btn2">统配选择器< /span>
+	 < span id="btn3">群组选择器< /span>
+	 < span id="btn4">后代选择器< /span>
+	 < span id="btn5">过滤选择器< /span>
+	 < span id="btn6">属性选择器< /span>
+	 < script src="jquery/jquery-3.1.1.min.js">< /script>
+	 < script type="text/javascript">
+	 	$(document).ready(function(){
+	 		//id选择器
+	 		$("#id").click(function(){
+	 			$("#li1").toggleClass("cssClass");		
+	 		})
+	 		//class选择器
+	 		$("#btn").click(function(){
+	 			$(".li2").toggleClass("cssClass");
+	 		})
+	 		//标签选择器
+	 		$("#btn1").click(function(){
+	 			$("li").toggleClass("cssClass");
+	 		})
+	 		//通配选择器
+	 		$("#btn2").click(function(){
+	 			$("*").toggleClass("cssClass");
+	 		})
+	 		//群组选择器
+	 		$("#btn3").click(function(){
+	 			$("ul,span").toggleClass("cssClass");
+	 		})
+	 		//后代选择器
+	 		$("#btn4").click(function(){
+	 			$("ul>li").toggleClass("cssClass");
+	 		})
+	 		//过滤选择器
+	 		$("#btn5").click(function(){
+	 			$("ul li:first").toggleClass("cssClass");
+	 		})
+	 		//属性选择器
+	 		$("#btn6").click(function(){
+	 			$("input[name=ip1]").toggleClass("cssClass");
+	 		})
+	 	})
+	 < /script>
+	< /body>
+		</pre>
+		<ul>
+			<li id="li1">id选择器</li>
+			<li class="li2">class选择器</li>
+		</ul>
+		<div>
+		<input type="text" value="ip1" name="ip1"/>
+		<input type="date" value="ip2" name="ip2"/>
+		<input type="text" value="ip3" name="ip3"/>
+	</div>
+	
+	 <span id="id">id选择器</span>
+	 <span id="btn">class选择器</span>
+	 <span id="btn1">标签选择器</span>
+	 <span id="btn2">统配选择器</span>
+	 <span id="btn3">群组选择器</span>
+	 <span id="btn4">后代选择器</span>
+	 <span id="btn5">过滤选择器</span>
+	 <span id="btn6">属性选择器</span>
+	 <script src="js/jquery-3.1.1.min.js"></script>
+	 <script type="text/javascript">
+//	 	$(document).ready(function(){
+	 		//id选择器
+	 		$("#id").click(function(){
+	 			$("#li1").toggleClass("cssClass");		
+	 		})
+	 		//clsaa选择器
+	 		$("#btn").click(function(){
+	 			$(".li2").toggleClass("cssClass");
+	 		})
+	 		//标签选择器
+	 		$("#btn1").click(function(){
+	 			$("li").toggleClass("cssClass");
+	 		})
+	 		//通配选择器
+	 		$("#btn2").click(function(){
+	 			$("*").toggleClass("cssClass");
+	 		})
+	 		//群组选择器
+	 		$("#btn3").click(function(){
+	 			$("ul,span").toggleClass("cssClass");
+	 		})
+	 		//后代选择器
+	 		$("#btn4").click(function(){
+	 			$("ul>li").toggleClass("cssClass");
+	 		})
+	 		//过滤选择器
+	 		$("#btn5").click(function(){
+	 			$("ul li:first").toggleClass("cssClass");
+	 		})
+	 		//属性选择器
+	 		$("#btn6").click(function(){
+	 			$("input[name=ip1]").toggleClass("cssClass");
+	 		})
+//	 	})
+	 </script>
+	 </div>
+	</body>
+</html>
