@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	<style type="text/css">
+			*{padding: 0;margin: 0;font-family: "微软雅黑";}
+			h1{width: auto;height: 100px;line-height: 100px;text-align: center;color: red;}
+			h3{width: auto;height: 60px;line-height: 60px;color: green;}
+			pre{background:#F5F2F0;border: 1px solid grey;border-radius: 10px;margin-top: 20px;margin-bottom: 30px;padding: 5px;}
+            #box{width: 1000px;margin: auto;background: #F5F5D5;}
+			li{
+				list-style: none;
+				height: 50px;
+				width: 50px;
+				border: 1px solid #999;
+				text-align: center;
+			}
+			span{
+				border: 1px solid green;
+				cursor: pointer;
+			}
+			.cssClass{background: blue;}
+		</style>
+	</head>
+
+	<body>
+		<div id="box">
+			<h1>jQuery_DOM</h1>
+			<p></p>
+			<pre>
+        < button id="btn">点击< /button>
+		< div id="box">哈哈< /div>
+		< input type="" name="" id="ipt" value="" />
+		< img src="img/1.png"alt="没有图片时显示" id="img">
+		< p style="border:1px solid red;">我是p标签< /p>
+           </pre>
+			<p>原生js找到的是div这个元素</p>
+			<pre>      
+		console.log(document.getElementById("box"))
+		</pre>
+			<p>jquery找到的是div这个数组</p>
+			<pre>
+		console.log($("#box"));
+		$(function(){
+			$("#btn").click(function(){
+              $("#img").attr("src","img/1.png")
+			  })
+		 })
+        </pre>
+			<p>jQuery添加css样式</p>
+			<pre>
+          $(function(){
+			$("#btn").click(function(){
+            $("#img").removeAttr("src")
+            console.log($("#box").text("red"));//相当于innerText;
+            console.log($("#ipt").val("哈哈"));//相当于value.
+            console.log($("#box").html("&lt;span>red&lt;/span>"));//相当于innerHTML
+             console.log($("#box").append("&lt;p>哈哈&lt;/p>"));//添加原基础上添加元素或者文字
+             console.log($("&lt;p>哈哈&lt;/p>").appendTo("#box"));//添加原基础上添加元素或者文字
+             console.log($("#box").prepend("&lt;p>哈哈&lt;/p>"));//添加原基础上添加元素或者文字
+             console.log($("&lt;p>哈哈&lt;/p>").appendTo("#box"));//添加原基础上添加元素或者文字
+             console.log($("#box").empty());//清空#box里面的所有子元素
+             console.log($("#box").remove());//清空#box里面的所有子元素包括#box自身
+             $("#box").clone().prependTo("#box");//克隆
+             $("#box").addClass("Class");//添加css样式
+             $("#box").removeClass("Class");//移除css样式
+             $("#box").css("red");//直接添加css样式
+             $("#box").css({"color":"red","background":"green"}); //设置多个属性用花括号扩起来.
+            console.log($("p").innerHeight());//只算留白,不算边框
+            console.log($("p").innerWidth());//只算留白,不算边框
+            console.log($("p").outerHeight());//留白,边框都算
+            console.log($("p").outerWidth());//留白,边框都算
+			})
+		})
+        </pre>
+			<p>jQuery动画</p>
+			<pre>
+        	$("#btn").click(function(){
+		$("#box").show(2000)//显示
+	        $("#box").fadeIn(2000);//淡入
+                $("#box").slideDown(2000);//
+                $("#box").slideToggle(2000);//滑动出现消失
+                $("#box").fadeToggle(2000);//淡入淡出
+                $("#box").animate({ width: "90%",height: "100%", fontSize: "10em", borderWidth: 10},1000);//自定义动画
+			})
+        </pre>
+			<p>ajax-jQuery用法</p>
+			<pre>
+        	$(function(){
+			$("#btn").click(function(){
+				$.ajax({
+					url:"txt.txt",//文件地址
+					type:"GET",
+					dataType:"text",
+					data:"",
+					success:function(msg){
+						console.log("服务器返回成功:"+msg);
+						$("#box").html(msg)
+					},error:function(erroy){
+						console.log("服务器返回失败:"+erroy);
+					}
+				})
+			})
+		})
+        </pre>
+		</div>
+	</body>
+
+</html>
