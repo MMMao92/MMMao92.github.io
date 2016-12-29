@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>JavaScript1229茅伟锋基础总结</title>
+	</head>
+	<style type="text/css">
+		*{padding: 0;margin: 0;font-family: "微软雅黑";}
+			h1{width: auto;height: 100px;line-height: 100px;text-align: center;color: red;}
+			h3{width: auto;height: 60px;line-height: 60px;color: green;}
+			pre{background:#F5F2F0;border: 1px solid grey;border-radius: 10px;margin-top: 20px;margin-bottom: 30px;padding: 5px;}
+            #box{width: 1000px;margin: auto;background: #F5F5D5;}
+			li{
+				list-style: none;
+				height: 50px;
+				width: 50px;
+				border: 1px solid #999;
+				text-align: center;
+			}
+			span{
+				border: 1px solid green;
+				cursor: pointer;
+			}
+			.cssClass{background: blue;}
+	</style>
+	<body>
+		<h1>jQuery及ajax</h1>
+		<h3>今天的主要代码</h3>
+		<p>申请表等</p>
+		<pre>
+			<!DOCTYPE html>
+<html>
+
+	< head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			.main {
+				width: 1000px;
+				height: auto;
+				margin: auto;
+			}
+			
+			table {
+				border-collapse: collapse;
+			}
+			
+			td {
+				border: 1px solid black;
+				height: 30px;
+				width: 166.67px;
+				text-align: center;
+			}
+			
+			tr {
+				height: 30px;
+			}
+			
+			input,
+			select {
+				border: 0px;
+			}
+		</style>
+	</head>
+
+	<body>
+		< div class="main">
+			< div class="title" style="text-align: center;">
+				< h1>禾米科技免费培训申请表</h1></div>
+			< div class="word" style="text-align: center;">方式一、在线填写（如果信息提交失败或者您使用的是IE10版本以下浏览器的请选择方式二）</div>
+			< table>
+				< tr>
+					< td colspan="6">个人信息及联系方式</td>
+				</tr>
+				<  tr>
+					< td>*姓名</td>
+					< td><input type="text" style="width: 166.6px;height: 30px;" id="myname" /></td>
+					< td>*性别</td>
+					< td>
+						< select style="width: 166.6px;height: 30px; " id="sex">
+							<option></option>
+							<option>男</option>
+							<option>女</option>
+						< /select>
+					</td>
+					< td>*出生年月</td>
+					< td><input type="month" / id="month"></td>
+				</tr>
+				< tr>
+					< td>*手机号码</td>
+					< td><input type="text" style="width: 166.6px;height: 30px;" / id="myphone"></td>
+					< td>*政治面貌</td>
+					< td>
+						< select style="width: 166.6px;height: 30px;" id="zz">
+							< option></option>
+							<option>团员</option>
+							<option>党 员</option>
+							<option>群众</option>
+						</select>
+					< /td>
+					< td>*QQ</td>
+					< td><i nput type="number" style="width: 166.6px;height: 30px;" / id="qq"></td>
+				</tr>
+				<tr>
+					< td>*学院</td>
+					< td>< input type="text" style="width: 166.6px;height: 30px;" id="college" /></td>
+					< td>系</td>
+					< td>< input type="text" style="width: 166.6px;height: 30px;" id="xi" />
+					</td>
+					< td>*专业</td>
+					< td>< input type="text" style="width: 166.6px;height: 30px;" id="major" /></td>
+				</tr>
+				<tr>
+					< td colspan="6">家庭联系方式</td>
+				</tr>
+				<tr>
+					< td>父亲姓名</td>
+					< td colspan="2"><input type="text" id="faname" style="width: 333.3px;height: 30px;" /></td>
+					< td>父亲电话</td>
+					< td colspan="2"><input type="text" id="faphone" style="width: 333.3px;height: 30px;" />
+					</td>
+				</tr>
+				<tr>
+					< td>母亲姓名</td>
+					< td colspan="2"><input type="text" id="maname" style="width: 333.3px;height: 30px;" /></td>
+					< td>母亲电话</td>
+					< td colspan="2"><input type="text" id="maphone" style="width: 333.3px;height: 30px;" />
+					</td>
+				</tr>
+				<tr>
+					< td>*家庭住址</td>
+					< td colspan="5"><input type="text" style="width: 846.3px;height: 30px;" id="address" /></td>
+				</tr>
+				<tr>
+					< td>*信息来源</td>
+					< td colspan="5"><input type="radio" / name="1">1、熟人介绍&nbsp;<input type="radio" name="1" />2、杂志&nbsp;<input type="radio" name="1" />3、媒体广告&nbsp;<input type="radio" name="1" />4、其他&nbsp;</td>
+				</tr>
+				<tr>
+					< td colspan="6">个人能力与信息评价（写明自己所学的专业知识与能力、获奖情况以及自己的优点和兴趣爱好）</td>
+				</tr>
+				<tr style="height: 80px;">
+					< td>*专业能力描述</td>
+					< td colspan="5"><input type="text" style="width: 846.3px;height: 80px;" id="zhuanye" /></td>
+				</tr>
+				<tr style="height: 80px;">
+					< td>*自我评价描述</td>
+					< td colspan="5"><input type="text" style="width: 846.3px;height: 80px;" id="ziwo" /></td>
+				</tr>
+			< /table>
+			< div style="width: 1000px;text-align: center; margin-top: 20px;;"><button id="btn">提交</button></div>
+			< div class="word" style="text-align: center; margin-top: 10px;">方式二、
+				<a href="">申请表下载</a>填写好后请把该申请表格及时发送到hemikeji.hr@hemikeji.com,以便联系面试，谢谢！</div>
+		< /div>
+
+		< script type="text/javascript">
+			$("#btn").click(function() {
+								var nl = $("#myname").val().length;
+								if(nl < 2 || nl > 20) {
+									alert("名字长度应在2到20个字之间")
+									return false;
+								};
+								if($("#sex").val() == "") {
+									alert("请选择性别")
+									return false;
+								}
+								if($("#month").val() == "") {
+									alert("请选择出生年月")
+									return false;
+								}
+								var reg = /^(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\d{8}$/;
+								if(!reg.test($('#myphone').val())) {
+									alert("请输入正确的你手机号码");
+									return false;
+								}
+								if($("#zz").val() == "") {
+									alert("请选择政治面貌")
+									return false;
+								}
+				
+								var qql = $("#qq").val().length;
+								if(qql < 6 || qql > 12) {
+									alert("请输入正确的qq号");
+									return false;
+								}
+								var cl = $("#college").val().length;
+								if(cl < 3 || cl > 20) {
+									alert("请输入正确的学院");
+									return false;
+								}
+								var xl = $("#xi").val().length;
+								if(xl < 3 || xl > 20) {
+									alert("请输入正确的系名");
+									return false;
+								}
+								var ml = $("#major").val().length;
+								if(ml < 3 || ml > 20) {
+									alert("请输入正确的专业名");
+									return false;
+								}
+								var nl = $("#faname").val().length;
+								if(nl < 2 || nl > 20) {
+									alert("父亲名字长度应在2到20个字之间")
+									return false;
+								};
+								var reg = /^(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\d{8}$/;
+								if(!reg.test($('#faphone').val())) {
+									alert("请输入你爸爸正确的手机号码");
+									return false;
+								}
+				
+								var nl = $("#maname").val().length;
+								console.log(nl)
+								if(nl < 2 || nl > 20) {
+									alert("母亲名字长度应在2到20个字之间")
+									return false;
+								};
+				
+								var reg = /^(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\d{8}$/;
+								if(!reg.test($('#maphone').val())) {
+									alert("请输入你妈妈正确的手机号");
+									return false;
+								}
+				
+								var adl = $("#address").val().length;
+								if(adl < 3 || adl > 20) {
+									alert("请输入正确的家庭住址");
+									return false;
+								}
+								
+								if($("input:checked").length == 0) {
+									alert("请选择一个信息来源")
+									return false;
+								}
+				
+								var zyl = $("#zhuanye").val().length;
+								if(zyl < 20 || zyl > 200) {
+									alert("请输入正确的专业技能描述");
+									return false;
+								}
+				
+								var zwl = $("#ziwo").val().length;
+								if(zwl < 2 || zwl > 200) {
+									alert("请输入正确的自我评价描述");
+									return false;
+								}
+				var name = $("#myname").val();
+				var sex = $("#sex").val();
+				var birthday = $("#month").val();
+				var mobile = $("#myphone").val();
+				var political = $("#zz").val();
+               var qq = $("#qq").val();
+				var college = $("#college").val();
+				var faculty = $("#xi").val();
+				var major = $("#major").val();
+				var fatherName = $("#faname").val();
+				var fatherMobile = $("#faphone").val();
+				var matherName = $("#maname").val();
+				var matherMobile = $("#maphone").val();
+				var homeAddress = $("#address").val();
+				var source = $("input:checked")。val();
+				var majorMemo = $("#zhuanye").val();
+				var selfMemo = $("#ziwo").val();
+				
+/*								var name = "我要搜索";
+								var sex = "男";
+								var birthday = '201612';
+								var mobile = "15205767771";
+								var political = "党员";
+								var college = "三十多岁多多所";
+								var qq = "52761381";
+								var faculty ="萨达萨达";
+								var major = "撒打算打算";
+								var fatherName = "撒打算打算";
+								var fatherMobile = "15205767771";
+								var matherName = "撒打算打算";
+								var matherMobile = "15205767771";
+								var homeAddress = "撒打算打算";
+								var source = "打算撒打算打算";
+								var majorMemo = "撒打算打算撒打算打算撒打算打算撒打算打算撒打算打算";
+								var selfMemo ="撒打算打算撒打算打算撒打算打算撒打算打算撒打算打算";*/
+								
+
+				var _url = "http://www.hemijiaoyu.com/service/addApply";
+				var _data = {};
+				_data.name = name;
+				_data.sex = sex;
+//				_data.birthday = birthday;
+				_data.mobile = mobile;
+				_data.political = political;
+				_data.qq = qq;
+				_data.college = college;
+				_data.faculty = faculty;
+				_data.major = major;
+				_data.fatherName = fatherName;
+				_data.fatherMobile = fatherMobile;
+				_data.matherName = matherName;
+				_data.matherMobile = matherMobile;
+				_data.homeAddress = homeAddress;
+				_data.source = source;
+				_data.majorMemo = majorMemo;
+				_data.selfMemo = selfMemo;
+             
+				$.ajax({
+					type: "post",
+					url: _url ,
+					async: true,
+					datatype: "text",
+					data: _data,
+					success: function(msg) {
+						console.log("成功" + msg)
+					},
+					error: function(msg) {
+						console.log(2)
+					},
+				});
+			})
+		</script>
+	</body>
+
+</html>
+		</pre>
+		
+		<h3>还有下拉框</h3>
+		<pre>
+			<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		< style type="text/css">
+			#box{
+				width: 1500px;
+				height: 30px;
+				background: url(img/bg.jpg) no-repeat;
+				margin: auto;
+				line-height: 30px;
+			}
+			.list{
+				width: 90px;
+				height: 30px;
+				background: url(img/libg.jpg) no-repeat;
+				float: left;
+			text-align: center;
+				line-height: 30px;
+				margin-left: 5px;
+				
+			}
+				.list1{
+				width: 90px;
+				height: 30px;
+				background: url(img/libg.jpg) no-repeat;
+			   text-align: center;
+				line-height: 30px;
+					display: none;
+			}
+		</style>
+	</head>
+	< body>
+		< div id="box">
+			< div class="list">一级菜单
+					<div class="list1">二级菜单</div>
+					<div class="list1">二级菜单</div>
+					<div class="list1">二级菜单</div>
+			</div>
+			< div class="list">一级菜单
+					<div class="list1">二级菜单</div>
+					<div class="list1">二级菜单</div>
+					<div class="list1">二级菜单</div>
+			</div>
+			< div class="list">一级菜单
+					<div class="list1">二级菜单</div>
+					<div class="list1">二级菜单</div>
+					<div class="list1">二级菜单</div>
+			</div>
+			< div class="list">一级菜单
+					<div class="list1">二级菜单</div>
+					<div class="list1">二级菜单</div>
+					<div class="list1">二级菜单</div>
+			</div>
+			< div class="list">一级菜单
+					<div class="list1">二级菜单</div>
+					<div class="list1">二级菜单</div>
+					<div class="list1">二级菜单</div>
+			</div>
+			< div class="list">一级菜单
+					<div class="list1">二级菜单</div>
+					<div class="list1">二级菜单</div>
+					<div class="list1">二级菜单</div>
+			</div>
+			< div class="list">一级菜单
+					<div class="list1">二级菜单</div>
+					<div class="list1">二级菜单</div>
+					<div class="list1">二级菜单</div>
+			</div>
+			< div class="list">一级菜单
+					<div class="list1">二级菜单</div>
+					<div class="list1">二级菜单</div>
+					<div class="list1">二级菜单</div>
+			</div>
+			< div class="list">一级菜单
+					<div class="list1">二级菜单</div>
+					<div class="list1">二级菜单</div>
+					<div class="list1">二级菜单</div>
+			</div>
+			< div class="list">一级菜单
+					<div class="list1">二级菜单</div>
+					<div class="list1">二级菜单</div>
+					<div class="list1">二级菜单</div>
+			</div>
+			
+		</div>
+		< script src="js/jquery-3.1.1.js" type="text/javascript" charset="utf-8"></script>
+		< script type="text/javascript">
+			$(".list").mousemove(function(){
+				$(this).children('.list1').slideDown()
+			})
+			$(".list").mouseleave(function(){
+					$(this).children('.list1').slideUp()
+			})
+		</script>
+	</body>
+</html>
+
+		</pre>
+		<p>效果图。。在录的小视频上</p>
+	</body>
+</html>
