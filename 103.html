@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>103茅伟锋JavaScript总结</title>
+		<style type="text/css">
+			* {
+				padding: 0;
+				margin: 0;
+				font-family: "微软雅黑";
+			}
+			
+			h1 {
+				width: auto;
+				height: 100px;
+				line-height: 100px;
+				text-align: center;
+				color: red;
+			}
+			
+			h3 {
+				width: auto;
+				height: 60px;
+				line-height: 60px;
+				color: green;
+			}
+			
+			pre {
+				background: #F5F2F0;
+				border: 1px solid grey;
+				border-radius: 10px;
+				margin-top: 20px;
+				margin-bottom: 30px;
+				padding: 5px;
+			}
+			
+			#box {
+				width: 1000px;
+				margin: auto;
+				background: #F5F5D5;
+			}
+			
+			li {
+				list-style: none;
+				height: 50px;
+				width: 50px;
+				border: 1px solid #999;
+				text-align: center;
+			}
+			
+			span {
+				border: 1px solid green;
+				cursor: pointer;
+			}
+			
+			.cssClass {
+				background: blue;
+			}
+		</style>
+	</head>
+
+	<body>
+		<h1>103总结</h1>
+		<h3>今天主要讲了jQuery几种动画效果的代码siblings() index() eq()</h3>
+		<h3>具体代码使用如下</h3>
+		<h3>鼠标移入然后出现横条，移出消失与选中图片</h3>
+		<pre>
+				< script type="text/javascript">
+	 				$(function(){
+						$(".tab li").mouseover(function(){
+						$(this).addClass("active").siblings("li").removeClass("active");
+						var  idx = $(this).index();
+						$(".main").eq(idx).addClass("selected").siblings(".main").removeClass("selected")
+						})
+				})
+				</script>
+		</pre>
+		<h3>图片轮播效果。移动到下面的标签图片更换</h3>
+		<pre>
+			< script type="text/javascript">
+	$(function(){
+		var idx = 0;
+		$(".wrap>ol>li").mousemove(function(){
+			idx +=1;
+			$(this).addClass("active").siblings().removeClass("active");
+			$(".wrap>ul>li")
+			.eq($(this).index())
+			.css({"left":500,"z-index":idx})
+			.animate({"left":0},30)
+		})
+	})
+< /script>
+		</pre>
+		<h3>选中图片，图片伸展开</h3>
+		<pre>
+			< script>
+        $(function () {
+            $(".wrap li").each(function (i,ele) {
+                $(this)
+                        .css("background-image","url(img/" + (i + 1) +".png)");
+            }).mouseenter(function () {
+                $(this).stop().animate({
+                    "width":600
+                },300).stop().animate({
+                    "width":200
+                },300)
+            }).mouseleave(function () {
+                $(this).stop().animate({
+                    "width":100
+                },300)
+            })
+        })
+    < /script>
+		</pre>
+		<h3>今天的作业</h3>
+		<pre>
+			<!DOCTYPE html>
+		< html>
+		< head>
+		< meta charset="UTF-8">
+		< title></title>
+		< style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+			.box{
+				width: 300px;
+				height: 183px;
+				background: url(img/aaa.jpg) no-repeat;
+				overflow: hidden;
+				position: relative;
+			}
+			.bb{
+				width: 300px;
+				height: 183px;
+				background: black;
+				opacity: 0.3;
+				display: none;
+				position: absolute;
+			}
+			.word{
+				width: 300px;
+				height: 50px;
+				position: absolute;
+				bottom: 0px;
+				background: black;
+					opacity: 0.3;
+	/*			display: none;*/
+				color: white;
+				text-align: center;
+				line-height: 50px;
+				font-weight: bold;
+			}
+		</style>
+	< /head>
+	< body>
+		< div class="box">
+			< div class="bb"></div>
+			< div class="word">啊~我是小贵子</div>
+		< /div>
+		< div class="box">
+			< div class="bb"></div>
+			< div class="word">啊~我是小贵子</div>
+		< /div>
+		< script src="js/jquery-3.1.1.js" type="text/javascript" charset="utf-8"></script>
+		< script type="text/javascript">
+			$(function(){
+				$(".box").mouseenter(function(){
+					$(this).children(".bb").css({"right":300,"display":"block"}).animate({"right":0},100);
+					$(this).children(".word").slideUp();
+				})
+				$(".box").mouseleave(function(){
+					$(this).children(".bb").css({"right":0}).animate({"right":300},100);
+					$(this).children(".word").slideDown();
+				})
+				
+			})
+		</script>
+		
+		<!--<div id="box">
+			<div id="bb"></div>
+			<div id="word">啊~我是小贵子</div>
+		</div>
+	</body>
+	<script src="js/jquery-3.1.1.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+	
+		$(function(){
+			$("#box").mouseenter(function(){
+				$("#bb")
+				.css({"right":300,"display":"block"})
+				.animate({"right":0},100);
+				$("#word").slideUp();
+				
+			})
+			$("#box").mouseleave(function(){
+				$("#bb").css({"right":0}).animate({"right":300},100);
+				$("#word").slideDown();
+			})
+		})
+	
+	</script>-->
+	
+< /html>
+
+		</pre>
+		<h3>效果图。。感受下就好了，图片上传不上去 </h3>
+		<pre>
+			<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+			.box{
+				width: 300px;
+				height: 183px;
+				background: url(img/aaa.jpg) no-repeat;
+				overflow: hidden;
+				position: relative;
+			}
+			.bb{
+				width: 300px;
+				height: 183px;
+				background: black;
+				opacity: 0.3;
+				display: none;
+				position: absolute;
+			}
+			.word{
+				width: 300px;
+				height: 50px;
+				position: absolute;
+				bottom: 0px;
+				background: black;
+					opacity: 0.3;
+	/*			display: none;*/
+				color: white;
+				text-align: center;
+				line-height: 50px;
+				font-weight: bold;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="bb"></div>
+			<div class="word">啊~我是小贵子</div>
+		</div>
+		<div class="box">
+			<div class="bb"></div>
+			<div class="word">啊~我是小贵子</div>
+		</div>
+		<script src="js/jquery-3.1.1.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				$(".box").mouseenter(function(){
+					$(this).children(".bb").css({"right":300,"display":"block"}).animate({"right":0},100);
+					$(this).children(".word").slideUp();
+				})
+				$(".box").mouseleave(function(){
+					$(this).children(".bb").css({"right":0}).animate({"right":300},100);
+					$(this).children(".word").slideDown();
+				})
+				
+			})
+		</script>
+		
+		<!--<div id="box">
+			<div id="bb"></div>
+			<div id="word">啊~我是小贵子</div>
+		</div>
+	</body>
+	<script src="js/jquery-3.1.1.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+	
+		$(function(){
+			$("#box").mouseenter(function(){
+				$("#bb")
+				.css({"right":300,"display":"block"})
+				.animate({"right":0},100);
+				$("#word").slideUp();
+				
+			})
+			$("#box").mouseleave(function(){
+				$("#bb").css({"right":0}).animate({"right":300},100);
+				$("#word").slideDown();
+			})
+		})
+	
+	</script>-->
+	
+< /html>
+
+		</pre>
+		<h1>完</h1>
+
+	</body>
+
+</html>
