@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>103茅伟锋JavaScript总结</title>
+		<style type="text/css">
+			* {
+				padding: 0;
+				margin: 0;
+				font-family: "微软雅黑";
+			}
+			
+			h1 {
+				width: auto;
+				height: 100px;
+				line-height: 100px;
+				text-align: center;
+				color: red;
+			}
+			
+			h3 {
+				width: auto;
+				height: 60px;
+				line-height: 60px;
+				color: green;
+			}
+			
+			pre {
+				background: #F5F2F0;
+				border: 1px solid grey;
+				border-radius: 10px;
+				margin-top: 20px;
+				margin-bottom: 30px;
+				padding: 5px;
+			}
+			
+			#box {
+				width: 1000px;
+				margin: auto;
+				background: #F5F5D5;
+			}
+			
+			li {
+				list-style: none;
+				height: 50px;
+				width: 50px;
+				border: 1px solid #999;
+				text-align: center;
+			}
+			
+			span {
+				border: 1px solid green;
+				cursor: pointer;
+			}
+			
+			.cssClass {
+				background: blue;
+			}
+		</style>
+	</head>
+
+	<body>
+		<h1>html5标签</h1>
+		<h3>主要的几个标签如下</h3>
+		<h3>header nav section article aside footer</h3>
+		<h3>代码示例如下</h3>
+		<pre>
+			<!DOCTYPE html>
+< html>
+	< head>
+		< meta charset="utf-8" />
+		< title></title>
+		< style type="text/css">
+			*{
+				list-style: none;
+			}
+			header{
+				width: 200px;
+				height: 30px;
+				background: #999;
+				margin: auto;
+				text-align: center;
+				line-height: 30px;
+			}
+			nav{
+				width: 600px;
+				height: 30px;
+				background: #ccc;
+				margin: auto;
+				text-align: center;
+			}
+			nav>ul>li{
+				width: 50px;
+				height: 30px;
+				text-align: center;
+				float: left;
+				padding-left: 50px;
+				line-height: 30px;
+			}
+			section{
+				width: 300px;
+				height: 30px;
+				margin: auto;
+				text-align: center;
+			}
+			aside{
+				width: 200px;
+				height: 30px;
+				margin: auto;
+				text-align: center;
+				background: #CCCCCC;
+				line-height: 30px;
+				
+			}
+			footer{
+				width: 200px;
+				height: 30px;
+				margin: auto;
+				text-align: center;
+				background: #999;
+				line-height: 30px;
+				
+			}
+			
+		</style>
+	</head>
+	< body>
+		< header>啊~我是小贵子</header>
+		< nav>
+			< ul>
+				< li>啊</li>
+				< li>~</li>
+				< li>我</li>
+				< li>好</li>
+				< li>cu</li>
+				
+			< /ul>
+		< /nav>
+		< section>
+			< h1>小贵子~穿花衣</h1>
+		< /section>
+		< section>
+			< h1>年年春天来这里</h1>
+		< /section>
+		< section>
+			< h1>我问贵子为啥来</h1>
+		</ section>
+		< section>
+			< h1>贵子说</h1>
+		< /section><section>
+			< h1>这里的春天最美丽</h1>
+		< /section>
+		< aside>啊~寂寞</aside>
+		< footer>小贵子写于2017103</footer>
+	< /body>
+< /html>
+</pre>
+<h3>html5的特性</h3>
+<p>语义化：能够让你更恰当地描述你的内容是什么</p>
+	<p>连通性：能够让你和服务器之间通过创新的新技术方法进行通信</p>
+	<p>离线存储：能够让网页在客户端本地存储数据以及更高效地离线运行</p>
+	<p>多媒体：使 video 和 audio 播放音视频绘图/动画</p>
+	<p>效果：提供了一个更加分化范围的呈现选择性能集成：提供了非常显著的性能优化和更有效的计算机硬件使用</p>
+	<p>设备访问 ：能够处理各种输入和输出设备</p>
+	
+<h3>作业代码</h3>
+<pre>
+	< !DOCTYPE html>
+< html>
+	< head>
+		< meta charset="UTF-8">
+		< title></title>
+		< style type="text/css">
+			*{
+			 margin:0;
+			 padding: 0;
+			}
+			header{
+				width: 1000px;
+				height: 80px;
+			margin: auto;
+				margin-top: 80px;
+				
+				}
+			header  a{
+				color: black;
+			}
+			header  p{
+				width: 150px;
+				height: 30px;
+				line-height: 30px;
+			}
+			.bignav{
+				width: 100%;
+				height: 30px;
+				background: black;
+			}
+			nav{
+				width: 1200px;
+				height: 30px;
+				background: black;
+				margin: auto;
+				
+			}
+			nav ul li{
+				width: 80px;
+				height: 30px;
+				float: left;
+				line-height: 30px;
+				list-style: none;
+			}
+			nav ul li a{
+				color: white;
+				
+			}
+			.box{
+				width: 1200px;
+				height: auto;
+				margin: auto;
+				position: relative;
+				
+			}
+			section{
+			
+				margin-top: 50px;
+				margin-left: 80px;
+				width:800px;
+				height: auto;
+				background: white;
+			}
+			aside input{
+				width: 200px;
+				height: 30px;
+				
+			}
+			aside{
+				width: 300px;
+				height: 100px;
+				background: white;
+				position: absolute;
+				top: 0;
+				right: 0;
+				text-align: center;
+				line-height: 100px;
+			
+			}
+			.right{
+				width: 200px;
+				height: auto;
+				position: absolute;
+				top: 200px;
+				right: 0;
+			}
+			.right li{
+				width: 200px;
+				height: 50px;
+				margin-top: 10px;
+				
+			}
+			.right li a{
+				color: #A4B1B7;
+			}
+			.last{
+				width: 1000px;
+				height: 100px;
+				margin: auto;
+			}
+			footer{
+				width: 1200px;
+				height: 50px;
+				background: black;
+				text-align: center;
+				line-height: 50px;
+				margin: auto;
+				color: white;
+			}
+			.bigfooter{
+				width: 100%;
+				height: 50px;
+				background: black;
+			}
+		</style>
+	< /head>
+	< body style="background:#efefef ;">
+		< header>
+			< a href=""><h1>My Blog</h1></a>
+			< p>啊~我是小贵子</p>
+		</header>
+		< div class="bignav">
+		< nav>
+			< ul>
+				< li style="margin-left: 100px;"><a href="">博文</a></li>
+				< li><a href="">关于</a></li>
+				< li><a href="">留言</a></li>
+				< li><a href="">web学习</a></li>
+			</ul>
+		< /nav>
+		< /div>
+		< div class="box">
+		< section>
+			< h1>第一章   小贵子出生</h1>
+			< article>
+				< p>aaaaaaa
+					< p>SQLite 注释是附加的注释，可以在 SQLite 代码中添加注释以增加其可读性，他们可以出现在任何空白处，包括在表达式内和其他 SQL 语句的中间，但它们不能嵌套。
+SQL 注释以两个连续的 "-" 字符（ASCII 0x2d）开始，并扩展至下一个换行符（ASCII 0x0a）或直到输入结束，以先到者为准。
+您也可以使用 C 风格的注释，以 "/*" 开始，并扩展至下一个 "*/" 字符对或直到输入结束，以先到者为准。SQLite的注释可以跨越多行。</p>
+			</article>
+		</section>
+		< section>
+			< h1>第一章   小贵子出生</h1>
+			< article>
+				< p>aaaaaaa
+					< p>SQLite 注释是附加的注释，可以在 SQLite 代码中添加注释以增加其可读性，他们可以出现在任何空白处，包括在表达式内和其他 SQL 语句的中间，但它们不能嵌套。
+SQL 注释以两个连续的 "-" 字符（ASCII 0x2d）开始，并扩展至下一个换行符（ASCII 0x0a）或直到输入结束，以先到者为准。
+您也可以使用 C 风格的注释，以 "/*" 开始，并扩展至下一个 "*/" 字符对或直到输入结束，以先到者为准。SQLite的注释可以跨越多行。</p>
+			</article>
+		</section>
+		< section>
+			< h1>第一章   小贵子出生</h1>
+			< article>
+				< p>aaaaaaa
+					< p>SQLite 注释是附加的注释，可以在 SQLite 代码中添加注释以增加其可读性，他们可以出现在任何空白处，包括在表达式内和其他 SQL 语句的中间，但它们不能嵌套。
+SQL 注释以两个连续的 "-" 字符（ASCII 0x2d）开始，并扩展至下一个换行符（ASCII 0x0a）或直到输入结束，以先到者为准。
+您也可以使用 C 风格的注释，以 "/*" 开始，并扩展至下一个 "*/" 字符对或直到输入结束，以先到者为准。SQLite的注释可以跨越多行。</p>
+			</article>
+		</section>
+		<section>
+			< h1>第一章   小贵子出生</h1>
+			< article>
+				< p>aaaaaaa
+					< p>SQLite 注释是附加的注释，可以在 SQLite 代码中添加注释以增加其可读性，他们可以出现在任何空白处，包括在表达式内和其他 SQL 语句的中间，但它们不能嵌套。
+SQL 注释以两个连续的 "-" 字符（ASCII 0x2d）开始，并扩展至下一个换行符（ASCII 0x0a）或直到输入结束，以先到者为准。
+您也可以使用 C 风格的注释，以 "/*" 开始，并扩展至下一个 "*/" 字符对或直到输入结束，以先到者为准。SQLite的注释可以跨越多行。</p>
+			</article>
+		</section>
+		< section>
+			< h1>第一章   小贵子出生</h1>
+			< article>
+				< p>aaaaaaa
+					< p>SQLite 注释是附加的注释，可以在 SQLite 代码中添加注释以增加其可读性，他们可以出现在任何空白处，包括在表达式内和其他 SQL 语句的中间，但它们不能嵌套。
+SQL 注释以两个连续的 "-" 字符（ASCII 0x2d）开始，并扩展至下一个换行符（ASCII 0x0a）或直到输入结束，以先到者为准。
+您也可以使用 C 风格的注释，以 "/*" 开始，并扩展至下一个 "*/" 字符对或直到输入结束，以先到者为准。SQLite的注释可以跨越多行。</p>
+			</article>
+		</section>
+		< aside>
+			< input type="search" placeholder="搜索"  />
+		</aside>
+		
+		< div class="right">
+			< ul>
+				< h2>分类目录</h2>
+				< li><a href="">啊~我是小贵子</a></li>
+				< li><a href="">啊~我是小贵子</a></li>
+				< li><a href="">啊~我是小贵子</a></li>
+				< li><a href="">啊~我是小贵子</a></li>
+				< li><a href="">啊~我是小贵子</a></li>
+				< li><a href="">啊~我是小贵子</a></li>
+				< li><a href="">啊~我是小贵子</a></li>
+				< li><a href="">啊~我是小贵子</a></li>
+				< li><a href="">啊~我是小贵子</a></li>
+				< li><a href="">啊~我是小贵子</a></li>
+
+			< /ul>
+		< /div>
+		< div class="last">
+			< h4>Pages:</h4>   <a href="">Prey</a>   <a href="">1</a>   <a href="">2</a>   <a href="">3</a>   <a href="">4</a>   <a href="">5</a>
+		</div>
+		</div>
+		< div class="bigfooter">
+		< footer>
+			Copyright @ 2001.金庸.web
+		</footer>
+		</div>
+	</body>
+</html>
+
+</pre>
+</body>
+</html>
