@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>103茅伟锋JavaScript总结</title>
+		<style type="text/css">
+			* {
+				padding: 0;
+				margin: 0;
+				font-family: "微软雅黑";
+			}
+			
+			h1 {
+				width: auto;
+				height: 100px;
+				line-height: 100px;
+				text-align: center;
+				color: red;
+			}
+			
+			h3 {
+				width: auto;
+				height: 60px;
+				line-height: 60px;
+				color: green;
+			}
+			
+			pre {
+				background: #F5F2F0;
+				border: 1px solid grey;
+				border-radius: 10px;
+				margin-top: 20px;
+				margin-bottom: 30px;
+				padding: 5px;
+			}
+			
+			#box {
+				width: 1000px;
+				margin: auto;
+				background: #F5F5D5;
+			}
+			
+			li {
+				list-style: none;
+				height: 50px;
+				width: 50px;
+				border: 1px solid #999;
+				text-align: center;
+			}
+			
+			span {
+				border: 1px solid green;
+				cursor: pointer;
+			}
+			
+			.cssClass {
+				background: blue;
+			}
+		</style>
+	</head>
+
+	<body>
+		<h1>web储存、CSS3动画</h1>
+		<h3>web存储</h3>
+		<pre>
+				var storageObj = {
+		 storageFun: function (){
+			 if (!window.localStorage) {   //判断是否支持localStorage
+				console.log("不支持");
+				return false;
+			} else{
+				return true;
+			}
+		},
+		Set: function (_item,value){//增加
+			window.localStorage.setItem(_item,value);
+		},
+		Get: function (_item){//查找
+			return window.localStorage.getItem(_item);
+		},
+		Clear:function(){//清除全部
+			window.localStorage.clear();
+		},
+		Remove:function(){//删除单个
+			window.localStorage.remove();
+		},
+		};
+			</pre>
+		<h3>录入本地文件</h3>
+		<pre>
+				< form action="" method="post">
+			歌曲名:< input type="text" id="music">
+			< input type="button" value="提交"/ id="btn">
+		< /form>
+		< script type="text/javascript">
+			var music = document.getElementById("music");
+			var btn = document.getElementById("btn");
+			var i = 1;
+			btn.onclick = function (){			
+			var name="music"+i;
+			var str = music.value;
+			i++;
+			Set(name,str);		
+			}			
+				function Set(name,_music){
+				window.localStorage.setItem(name,_music);
+			}
+		< /script>
+			</pre>
+		<h3>css3 旋转</h3>
+		<pre>
+				< !DOCTYPE html>
+< html>
+	< head>
+		< meta charset="UTF-8">
+		<title></title>
+		< style type="text/css">
+			body{
+				margin: 0;
+				padding: 0;
+			}
+			#cube{
+				margin: 200px auto;
+				width: 400px;
+				height: 400px;
+				position: relative;
+				transform: rotateX(45deg) rotateY(45deg);
+				/*perspective: 1000;*//*透视3d效果*/
+				transform-style: preserve-3d;
+				transition: all 20s;
+			}
+			
+			#front,#back,#left,#right,#top,#bottom{
+				width: 400px;
+				height: 400px;
+				position: absolute;
+				text-align: center;
+				line-height: 400px;
+				font-size: 30px;
+			}
+			#left{
+				background: #FFA500;
+				transform: rotateY(90deg) translateZ(-200px);			
+			}
+			#right{
+				background: #002222;
+				transform: rotateY(90deg) translateZ(200px);			
+			}
+			#top{
+				background: #123123;
+				transform: rotateX(90deg) translateZ(200px);			
+			}
+			#bottom{
+				background: green;
+				transform: rotateX(90deg) translateZ(-200px);			
+			}
+			#front{
+				background: deeppink;
+				transform: translateZ(200px);			
+			}
+			#back{
+				background: #20B2AA;
+				transform:  translateZ(-200px);			
+			}
+		
+			@keyframes aaa{
+				0%{transform: rotateY(15deg) rotateX(150deg);}
+				20%{transform: rotateY(45deg) rotateX(350deg);}
+				30%{transform: rotateY(85deg) rotateX(550deg);}
+				100%{transform: rotateY(15deg) rotateX(150deg);}
+			
+			}
+			#cube{
+			animation:aaa 5s infinite;}
+		</style>
+	</head>
+	< body>
+		< div id="cube">
+			< d iv id="front">前面</div>
+			< div id="back">后面</div>
+			< div id="left">左面</div>
+			< div id="right">右面</div>
+			< div id="top">上面</div>
+			< div id="bottom">下面</div>
+		< /div>
+	</ body>
+
+</html>
+			</pre>
+		<h3>鼠标移入弹弹弹</h3>
+		<pre>
+				< !DOCTYPE html>
+< html>
+	< head>
+		< meta charset="UTF-8">
+		< title></title>
+		< style type="text/css">
+		.box{
+			width: 288px;
+				height: 288px;
+				border-radius: 288px;
+				background: red;
+				transition: all 1s;
+				perspective:10px;
+				border: 1px solid red;
+				}
+		
+			.ball{
+				width: 188px;
+				height: 188px;
+				border-radius: 188px;
+				margin-top: 50px;
+				margin-left: 50px;
+				background: greenyellow;
+				text-align: center;
+				line-height: 188px;
+			}
+			.ball:hover{
+			animation:aaa 2s infinite;
+			}
+			@keyframes aaa{
+				0%{transform: scale(0.7,0.8)}
+				20%{transform: scale(1,1)}
+				30%{transform: scale(0.7,0.6)}
+				40%{transform: scale(1,1)}
+				50%{transform: scale(0.7,0.6)}
+				70%{transform: scale(1,1)}
+				80%{transform: scale(0.8,0.8)}
+				100%{transform:scale(1,1)}
+			
+			}
+		</style>
+	</head>
+	< body>
+		< div class="box">
+		< div class="ball">弹
+		< /div>
+		< /div>
+	< /body>
+< /html>
+</pre>
+
+	</body>
+
+</html>
