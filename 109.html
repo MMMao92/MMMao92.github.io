@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{padding: 0;margin: 0;font-family: "微软雅黑";}
+			h1{width: auto;height: 100px;line-height: 100px;text-align: center;color: red;}
+			h3{width: auto;height: 60px;line-height: 60px;color: green;}
+			pre{background:lightblue;border: 1px solid grey;border-radius: 10px;margin-top: 20px;margin-bottom: 30px;padding: 5px;}
+            #box{width: 800px;margin: auto;}
+			li{
+				list-style: none;
+				height: 50px;
+				width: 50px;
+				border: 1px solid #999;
+				text-align: center;
+			}
+			span{
+				border: 1px solid green;
+				cursor: pointer;
+			}
+			.cssClass{background: blue;}
+		</style>
+	</head>
+	<body>
+		<h1>弹性布局</h1>
+		<h3>不知道讲的什么。。</h3>
+		<pre>
+			<pre>
+	< !DOCTYPE html>
+< html>
+	< head>
+		< meta charset="UTF-8">
+		< title></title>
+		< style type="text/css">
+			*{
+			 margin:0;
+			 padding: 0;
+			}
+			header{
+				width: 1000px;
+				height: 80px;
+			margin: auto;
+				margin-top: 80px;
+				
+				}
+			header  a{
+				color: black;
+			}
+			header  p{
+				width: 150px;
+				height: 30px;
+				line-height: 30px;
+			}
+			.bignav{
+				width: 100%;
+				height: 30px;
+				background: black;
+			}
+			nav{
+				width: 1200px;
+				height: 30px;
+				background: black;
+				margin: auto;
+				
+			}
+			nav ul li{
+				width: 80px;
+				height: 30px;
+				float: left;
+				line-height: 30px;
+				list-style: none;
+			}
+			nav ul li a{
+				color: white;
+				
+			}
+			.box{
+				width: 1200px;
+				height: auto;
+				margin: auto;
+				position: relative;
+				
+			}
+			section{
+			
+				margin-top: 50px;
+				margin-left: 80px;
+				width:800px;
+				height: auto;
+				background: white;
+			}
+			aside input{
+				width: 200px;
+				height: 30px;
+				
+			}
+			aside{
+				width: 300px;
+				height: 100px;
+				background: white;
+				position: absolute;
+				top: 0;
+				right: 0;
+				text-align: center;
+				line-height: 100px;
+			
+			}
+			.right{
+				width: 200px;
+				height: auto;
+				position: absolute;
+				top: 200px;
+				right: 0;
+			}
+			.right li{
+				width: 200px;
+				height: 50px;
+				margin-top: 10px;
+				
+			}
+			.right li a{
+				color: #A4B1B7;
+			}
+			.last{
+				width: 1000px;
+				height: 100px;
+				margin: auto;
+			}
+			footer{
+				width: 1200px;
+				height: 50px;
+				background: black;
+				text-align: center;
+				line-height: 50px;
+				margin: auto;
+				color: white;
+			}
+			.bigfooter{
+				width: 100%;
+				height: 50px;
+				background: black;
+			}
+		</style>
+	< /head>
+	< body style="background:#efefef ;">
+		< header>
+			< a href=""><h1>My Blog</h1></a>
+			< p>啊~我是小贵子</p>
+		</header>
+		< div class="bignav">
+		< nav>
+			< ul>
+				< li style="margin-left: 100px;"><a href="">博文</a></li>
+				< li><a href="">关于</a></li>
+				< li><a href="">留言</a></li>
+				< li><a href="">web学习</a></li>
+			</ul>
+		< /nav>
+		< /div>
+		< div class="box">
+		< section>
+			< h1>第一章   小贵子出生</h1>
+			< article>
+				< img src="img/7.png" alt="" />
+				< p>aaaaaaa
+					< p>SQLite 注释是附加的注释，可以在 SQLite 代码中添加注释以增加其可读性，他们可以出现在任何空白处，包括在表达式内和其他 SQL 语句的中间，但它们不能嵌套。
+SQL 注释以两个连续的 "-" 字符（ASCII 0x2d）开始，并扩展至下一个换行符（ASCII 0x0a）或直到输入结束，以先到者为准。
+您也可以使用 C 风格的注释，以 "/*" 开始，并扩展至下一个 "*/" 字符对或直到输入结束，以先到者为准。SQLite的注释可以跨越多行。</p>
+			</article>
+		</section>
+		< section>
+			< h1>第一章   小贵子出生</h1>
+			< article>
+				< img src="img/7.png" alt="" />
+				< p>aaaaaaa
+					< p>SQLite 注释是附加的注释，可以在 SQLite 代码中添加注释以增加其可读性，他们可以出现在任何空白处，包括在表达式内和其他 SQL 语句的中间，但它们不能嵌套。
+SQL 注释以两个连续的 "-" 字符（ASCII 0x2d）开始，并扩展至下一个换行符（ASCII 0x0a）或直到输入结束，以先到者为准。
+您也可以使用 C 风格的注释，以 "/*" 开始，并扩展至下一个 "*/" 字符对或直到输入结束，以先到者为准。SQLite的注释可以跨越多行。</p>
+			</article>
+		</section>
+		< section>
+			< h1>第一章   小贵子出生</h1>
+			< article>
+				< img src="img/7.png" alt="" />
+				< p>aaaaaaa
+					< p>SQLite 注释是附加的注释，可以在 SQLite 代码中添加注释以增加其可读性，他们可以出现在任何空白处，包括在表达式内和其他 SQL 语句的中间，但它们不能嵌套。
+SQL 注释以两个连续的 "-" 字符（ASCII 0x2d）开始，并扩展至下一个换行符（ASCII 0x0a）或直到输入结束，以先到者为准。
+您也可以使用 C 风格的注释，以 "/*" 开始，并扩展至下一个 "*/" 字符对或直到输入结束，以先到者为准。SQLite的注释可以跨越多行。</p>
+			</article>
+		</section>
+		<section>
+			< h1>第一章   小贵子出生</h1>
+			< article>
+				< img src="img/7.png" alt="" />
+				< p>aaaaaaa
+					< p>SQLite 注释是附加的注释，可以在 SQLite 代码中添加注释以增加其可读性，他们可以出现在任何空白处，包括在表达式内和其他 SQL 语句的中间，但它们不能嵌套。
+SQL 注释以两个连续的 "-" 字符（ASCII 0x2d）开始，并扩展至下一个换行符（ASCII 0x0a）或直到输入结束，以先到者为准。
+您也可以使用 C 风格的注释，以 "/*" 开始，并扩展至下一个 "*/" 字符对或直到输入结束，以先到者为准。SQLite的注释可以跨越多行。</p>
+			</article>
+		</section>
+		< section>
+			< h1>第一章   小贵子出生</h1>
+			< article>
+				< img src="img/7.png" alt="" />
+				< p>aaaaaaa
+					< p>SQLite 注释是附加的注释，可以在 SQLite 代码中添加注释以增加其可读性，他们可以出现在任何空白处，包括在表达式内和其他 SQL 语句的中间，但它们不能嵌套。
+SQL 注释以两个连续的 "-" 字符（ASCII 0x2d）开始，并扩展至下一个换行符（ASCII 0x0a）或直到输入结束，以先到者为准。
+您也可以使用 C 风格的注释，以 "/*" 开始，并扩展至下一个 "*/" 字符对或直到输入结束，以先到者为准。SQLite的注释可以跨越多行。</p>
+			</article>
+		</section>
+		< aside>
+			< input type="search" placeholder="搜索"  />
+		</aside>
+		
+		< div class="right">
+			< ul>
+				< h2>分类目录</h2>
+				< li><a href="">啊~我是小贵子</a></li>
+				< li><a href="">啊~我是小贵子</a></li>
+				< li><a href="">啊~我是小贵子</a></li>
+				< li><a href="">啊~我是小贵子</a></li>
+				< li><a href="">啊~我是小贵子</a></li>
+				< li><a href="">啊~我是小贵子</a></li>
+				< li><a href="">啊~我是小贵子</a></li>
+				< li><a href="">啊~我是小贵子</a></li>
+				< li><a href="">啊~我是小贵子</a></li>
+				< li><a href="">啊~我是小贵子</a></li>
+
+			< /ul>
+		< /div>
+		< div class="last">
+			< h4>Pages:</h4>   <a href="">Prey</a>   <a href="">1</a>   <a href="">2</a>   <a href="">3</a>   <a href="">4</a>   <a href="">5</a>
+		</div>
+		</div>
+		< div class="bigfooter">
+		< footer>
+			Copyright @ 2001.金庸.web
+		</footer>
+		</div>
+	</body>
+</html>
+		</pre>
+		
+	</body>
+</html>
